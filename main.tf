@@ -21,6 +21,6 @@ resource "null_resource" "greeting" {
     greet_trigger = "${var.pet_keeper}"
   }
   provisioner "local-exec" {
-    command = "echo Welcome to the family, ${random_pet.pet.result}!; echo You are ${random_integer.age.result} y.o.; curl -X POST -H 'Content-type: text/html' --data 'NEW PET JUST ARRIVED! ${random_pet.pet.result} is so cute!' https://webhook.site/90a919b7-0680-4b2b-b332-5fbdf03b75ad" 
+    command = "echo Welcome to the family, ${random_pet.pet.id}!; echo You are ${random_integer.age.result} y.o.; curl -X POST -H 'Content-type: text/html' --data 'NEW PET JUST ARRIVED! ${random_pet.pet.result} is so cute!' https://webhook.site/90a919b7-0680-4b2b-b332-5fbdf03b75ad" 
   }
 }
